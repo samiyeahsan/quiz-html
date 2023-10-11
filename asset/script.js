@@ -96,7 +96,7 @@ function quizEnd() {
   
 
     end.textContent = "Your Score : " + score;
-    //end.style.display = "block"
+    end.style.display = "block"
 
 
 }

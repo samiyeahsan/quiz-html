@@ -6,6 +6,6 @@ user will hit  the start button and questions will start and timer will start an
 
 
 ### The following image shows the web application's appearance and functionality:
-![preview image](https://github.com/samiyeahsan/quiz-html/blob/main/asset/quiz.hw4.png)
+![preview image](https://github.com/samiyeahsan/quiz-html/blob/master/asset/quiz.hw4.png)
 
 [Deployed Link](https://samiyeahsan.github.io/quiz-html/)
