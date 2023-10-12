@@ -7,8 +7,8 @@ var winner;
 var timeCount = document.querySelector("#timer");
 var score = 0;
 var end = document.querySelector(".end");
-
-
+var initialEl = document.querySelector("#initials");
+var submitBtn = document.querySelector("#subBtn");
 
 var question = [{
   question: "Which city is the capital of Minnesota State?",
@@ -93,13 +93,31 @@ function checkAnswers(event) {
 
 // }
 function quizEnd() {
-  
 
-    end.textContent = "Your Score : " + score;
-    end.style.display = "block"
+
+  end.textContent = "Your Score : " + score;
+  console.log(score)
+  end.style.display = "block"
+  window.localStorage.setItem("score", JSON.stringify(score))
+  //var highScore = JSON.parse(window.localStorage.getItem("highScore") || [] )
 
 
 }
+function saveHighScore() {
+  console.log("highScores")
+  var initials = initialEl.value.trim()
+  if (initials !== "") {
+    var highScores = JSON.parse(window.localStorage.getItem("highScores")) || [];
+    var newScore = {
+      score: score,
+      initials: initials
+    }
+    highScores.push(newScore)
+    window.localStorage.setItem("highScores", JSON.stringify(highScores))
+  }
+
+}
+submitBtn.onclick = saveHighScore;
 
 /*question.addEventListener("click", function(event){
  var currQuestion = question[0]
